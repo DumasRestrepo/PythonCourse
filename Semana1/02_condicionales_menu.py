@@ -14,7 +14,10 @@ numero_2 = int(input("Ingrese el segundo numero: "))
 if numero_1 == numero_2:
     print(f"Los numeros son iguales {numero_1} == {numero_2}")
 else:
-    print(f"Los numeros son diferentes {numero_1} != {numero_2}")
+    if numero_1 > numero_2:
+        print(f"El numero mayor es {numero_1} y el menor es {numero_2}")
+    else:
+        print(f"El numero mayor es {numero_2} y el menor es {numero_1}")
 
 
 
