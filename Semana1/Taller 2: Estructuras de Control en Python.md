@@ -1,5 +1,4 @@
-# 📘 Taller Evaluativo – Estructuras de Control en Python  
-**(Versión Mejorada y Formal de los Enunciados)**
+# 📘 Taller 2: Estructuras de Control en Python  
 
 ---
 
