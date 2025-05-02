@@ -1,12 +1,6 @@
 # 🧩 Tema: Funciones y Reutilización de Código
 
-## 🎯 Objetivo del tema:
 
-- Comprender qué son las funciones en Python.  
-- Aprender a definir, invocar y reutilizar funciones.  
-- Promover el diseño de código limpio, modular y mantenible.  
-
----
 
 ## 1. ¿Qué es una función?
 
