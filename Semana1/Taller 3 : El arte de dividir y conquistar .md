@@ -1,4 +1,4 @@
-# 📘 TALLER: FUNCIONES EN PYTHON
+# 📘 TALLER: El arte de dividir y conquistar
 
 ## 🏛️ 1. Biblioteca de Pamplona
 
