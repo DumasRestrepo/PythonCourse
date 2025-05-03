@@ -153,3 +153,96 @@ El séptimo número triangular es 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28.
 + 28 → 1, 2, 4, 7, 14, 28
 
 🔍 Se observa que el número 28 es el primero en tener más de 5 divisores.
+
+
+
+## 💼 4. Cálculo de Nómina en una Empresa Colombiana
+
+
+### 🧾 Contexto
+
+Una empresa colombiana desea automatizar el proceso de cálculo de la nómina mensual de sus empleados. Para ello, el sistema debe tener en cuenta:
+
+- El salario básico mensual  
+- Las deducciones obligatorias por ley (salud y pensión)  
+- Las horas extra laboradas  
+- Los días efectivamente trabajados en el mes  
+- Las bonificaciones según el tipo de empleado  
+- El cálculo del valor neto a pagar
+
+
+### 📥 Entradas del sistema
+
+Solicitar al usuario la siguiente información:
+
+- Nombre del empleado  
+- Cargo  
+- Salario básico mensual (SB)  
+- Número de días trabajados en el mes (máximo 30)  
+- Número de horas extra diurnas  
+- Número de horas extra nocturnas  
+- Número de horas extra en domingo o festivo (diurnas)  
+- Número de horas extra en domingo o festivo (nocturnas)
+
+
+### 💡 Cálculos requeridos
+
+#### 1. Valor hora ordinaria
+> Valor hora = Salario mensual ÷ 230
+> Se considera una jornada estándar de 230 horas al mes.
+
+
+#### 2. Horas extra
+
+| Tipo de hora extra                   | Fórmula                                 |
+|-------------------------------------|------------------------------------------|
+| Hora extra diurna (25%)             | Valor hora × 1.25 × cantidad             |
+| Hora extra nocturna (75%)           | Valor hora × 1.75 × cantidad             |
+| Domingo o festivo diurno (100%)     | Valor hora × 2.00 × cantidad             |
+| Domingo o festivo nocturno (150%)   | Valor hora × 2.50 × cantidad             |
+
+> Todas las tarifas se calculan sobre el valor hora ordinaria.
+
+
+
+### 3. Bonificaciones
+
+Las bonificaciones solo aplican para empleados que hayan trabajado **28 días o más** en el mes. El monto de la bonificación y el número de días descontados por ausencia dependen del tipo de empleado, clasificado según su salario base (SB) en relación con el Salario Mínimo Legal Vigente (SMMLV):
+
+| Tipo de empleado | Rango salarial (en SMMLV) | Bonificación      | Descuento por cada día no trabajado |
+|------------------|----------------------------|--------------------|--------------------------------------|
+| Tipo 1           | 1 SMMLV ≤ SB ≤ 2 SMMLV     | SB × 10%           | 1 día de salario                     |
+| Tipo 2           | 2 SMMLV < SB ≤ 4 SMMLV     | SB × 10%           | 2 días de salario                    |
+| Tipo 3           | 4 SMMLV < SB ≤ 5 SMMLV     | SB × 20%           | 3 días de salario                    |
+| Tipo 4           | SB > 5 SMMLV               | SB × 50%           | 5 días de salario                    |
+
+
+
+#### 4. Deducciones legales
+> **Total devengado** = salario base + valor total de horas extra + bonificación (si aplica)
+
+- **Salud (empleado):** 4% del total devengado  
+- **Pensión (empleado):** 4% del total devengado  
+- **ARL:** No se descuenta al empleado (a cargo del empleador)
+
+
+
+
+
+### 📤 Salidas del sistema
+
+El programa debe mostrar:
+
+- Nombre y cargo del empleado  
+- Salario básico mensual  
+- Días trabajados y, si aplica, valor descontado por ausencias  
+- Valor total de horas extra (desglosado por tipo)  
+- Bonificación aplicada (si aplica)  
+- Total devengado  
+- Deducciones:
+  - Salud
+  - Pensión
+- Total deducciones  
+- **Neto a pagar:** total devengado - total deducciones
+
+
