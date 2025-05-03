@@ -66,7 +66,7 @@ if __name__ == '__main__':
             print(estudiantes)
         elif opcion == 2:
             estudiantes =infore_aprobacion(estudiantes)
-        elif opcion ==3:
+        elif opcion == 3:
             break
         else:
             print("🚩🚩ingrese una opcion valida🚩🚩") 
@@ -77,3 +77,5 @@ if __name__ == '__main__':
     # TODO Añadir funcionalidad para Mostrar lista  de calificaciones del curso completo
     # TODO Añadir sub menu en informe para mostrar solo la lista de estudiantes que approbaron o no
     # TODO Añadir Diagrama de flujo de aplicativo completo
+
+    lista_nombres = []
