@@ -1,59 +1,83 @@
-def suma_dos_numeros(x,y): # x = 4 y y = 5
-    r = x + y
-    print(f'El resultado de la operacion es: {r}')
+"""
+calculadora_basica.py  Suma, resta, multiplicación y división segura
+"""
 
 
-def restar_dos_numeros(x,y):
+def suma_dos_numeros(x: float, y: float) -> None:
+    """Suma x + y y muestra el resultado por pantalla."""
+    resultado = x + y
+    print(f"El resultado de la operación es: {resultado}")
+
+
+def restar_dos_numeros(x: float, y: float) -> None:
+    """Resta x - y y muestra el resultado por pantalla."""
     resultado = x - y
-    print(f'El resultado de la operacion es: {resultado}')
+    print(f"El resultado de la operación es: {resultado}")
 
-def dividir_de_forma_segura(x,y):
+
+def multiplicar_dos_numeros(x: float, y: float) -> None:
+    """Multiplica x * y y muestra el resultado por pantalla."""
+    resultado = x * y
+    print(f"El resultado de la operación es: {resultado}")
+
+
+def dividir_de_forma_segura(x: float, y: float) -> None:
+    """Divide x / y validando la división por cero."""
     if y != 0:
-        resultado = x / y # Float
+        resultado = x / y  # float
     else:
-        resultado = "No es posible dividir entre 0 " # Str
-    print("El resultado es: ", resultado) 
+        resultado = "No es posible dividir entre 0"  # str
+    print(f"El resultado de la operación es: {resultado}")
 
 
-def mostrar_menu():
-    print("CALCULADORA BASICA")
-    print("""
-        1. Sumar
-        2. Restar
-        3. Multiplicar
-        4. Dividir
-        5. Salir
-          """)
-    
-def ingreso_de_datos():
-   while True:
-    try:
-        numero_1 = float(input("ingrse el primer numero:  "))
-        numero_2 = float(input("Ingrese el segundo numero:  "))
-    except:
-        print("A ingresado un valor no soportado")
-    else:
-        return numero_1, numero_2 # esto se ejecuta solo si el codigo no tiene excptiones
+
+def mostrar_menu() -> None:
+    """Imprime el menú principal."""
+    print(
+        "\nCALCULADORA BÁSICA\n"
+        "  1. Sumar\n"
+        "  2. Restar\n"
+        "  3. Multiplicar\n"
+        "  4. Dividir\n"
+        "  5. Salir\n"
+    )
 
 
-if __name__ == '__main__':
-    mostrar_menu()
-    opcion = int(input("Ingrese la opcion: "))
+def ingreso_de_datos() -> tuple[float, float]:
+    """Solicita dos números al usuario y los devuelve como float."""
+    while True:
+        try:
+            numero_1 = float(input("Ingrese el primer número: "))
+            numero_2 = float(input("Ingrese el segundo número: "))
+        except ValueError:
+            print("⚠️  Ha ingresado un valor no soportado. Intente de nuevo.")
+        else:
+            return numero_1, numero_2  # solo se ejecuta si no hubo excepción
 
-    if opcion == 1:
-        a,b = ingreso_de_datos()
-        suma_dos_numeros(a, b)
-    elif opcion == 2:
-        a,b = ingreso_de_datos()
-        restar_dos_numeros(a, b)
-    elif opcion == 3:
-        pass
-    elif opcion ==4:
-        a,b = ingreso_de_datos()
-        dividir_de_forma_segura(a,b)
-    elif opcion == 5:
-        pass
-    else:
-        print("Ingrese una opcion valida")
-    
-    
+if __name__ == "__main__":
+    while True:
+        mostrar_menu()
+
+        try:
+            opcion = int(input("Seleccione una opción: "))
+        except ValueError:
+            print("Ingrese un número válido.")
+            continue
+
+        if opcion == 1:
+            a, b = ingreso_de_datos()
+            suma_dos_numeros(a, b)
+        elif opcion == 2:
+            a, b = ingreso_de_datos()
+            restar_dos_numeros(a, b)
+        elif opcion == 3:
+            a, b = ingreso_de_datos()
+            multiplicar_dos_numeros(a, b)
+        elif opcion == 4:
+            a, b = ingreso_de_datos()
+            dividir_de_forma_segura(a, b)
+        elif opcion == 5:
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Ingrese una opción válida.")
