@@ -12,7 +12,11 @@ print(f"La lista de pares es: {zapatos_pares}")
 final = [x for x in lista if zapato %2 == 0]
 print(f"La lista de pares es: {final}")
 # Si son impares sumele uno
+zapatos_impares = []
+for zapato in lista:
+    if zapato % 2 != 0:
+        zapatos_impares.append(zapato*2)
 
-impares_plus = [zapato+1 for zapato in lista ]
+impares_plus = [zapato*2 for zapato in lista if zapato %2 != 0] #
 print(impares_plus)
 
